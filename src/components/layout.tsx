@@ -86,12 +86,12 @@ const LayoutContainer = () => {
   return (
     <Layout>
       <Sider>
-        <Logo className="logo">Admi22n</Logo>
+        <Logo className="logo">React Admin</Logo>
         <Menu
           mode="inline"
           selectedKeys={[currentMenu.name]}
           style={{ height: "100vh" }}
-          openKeys={openKeys}
+          // openKeys={openKeys}
           inlineIndent={16}
           inlineCollapsed={false}
           theme="dark"
@@ -117,7 +117,7 @@ const LayoutContainer = () => {
                         ))
                       }
                     </SubMenu>
-                  ) : <Menu.Item onClick={() => handleClick(item)}>{item.name}</Menu.Item>
+                  ) : <Menu.Item key={item.name} onClick={() => handleClick(item)}>{item.name}</Menu.Item>
                 }
               </>
             ))
@@ -125,9 +125,7 @@ const LayoutContainer = () => {
         </Menu>
       </Sider>
       <Layout>
-        <Header>
-          
-        </Header>
+        <Header />
         <Main>
           <Outlet />
         </Main>
@@ -145,7 +143,7 @@ const Main = styled(Content)`
 `;
 
 const Logo = styled.span`
-  font-size: 28px;
+  font-size: 20px;
   color: #fff;
   display: block;
   text-align: center;
