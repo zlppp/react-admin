@@ -5,21 +5,7 @@ import {
 import { UserOutlined, LockOutlined, SafetyOutlined } from '@ant-design/icons';
 import styled from '@emotion/styled';
 import { useRequest } from 'ahooks';
-import '../mock/login';
-import { loginServe } from '../mock/login';
-
-interface submitData {
-  username:string;
-  password:string;
-}
-
-function changeUsername(username: string): Promise<{ success: boolean }> {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve({ success: true });
-    }, 1000);
-  });
-}
+import { loginServe } from '../../mock/login';
 
 const Login = () => {
   const [form] = Form.useForm();
@@ -60,7 +46,7 @@ const Login = () => {
               maxLength={20}
             />
           </Form.Item>
-          <Form.Item
+          {/* <Form.Item
             name="code"
             rules={[{ required: true, message: '请输入验证码' }]}
           >
@@ -73,11 +59,12 @@ const Login = () => {
               />
               <span className="code">25fv</span>
             </div>
-          </Form.Item>
+          </Form.Item> */}
           <Form.Item>
             <Button type="primary" htmlType="submit" className="login-form-button" onClick={onClick} loading={loading}>
               登录
             </Button>
+            <span>用户名：admin；密码：123456</span>
           </Form.Item>
         </Form>
       </Content>

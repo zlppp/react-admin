@@ -1,20 +1,15 @@
+import React from 'react';
+import { BrowserRouter, Routes } from 'react-router-dom';
+import { routes } from '../untils/reactUtil';
+import routers from './router';
 
-import LayoutMain from '../components/layout';
-import { Switch, Route } from 'react-router-dom';
-import PrivateRoute from '../components/PrivateRoute'
-import Login from '../page/Login';
-import About from '../page/About';
-
-const Router = () => {
-  return (
-    <div>
-      <Switch>
-        <Route path='/login' component={Login}/>
-        {/* <PrivateRoute path='/' component={LayoutMain}/> */}
-      </Switch>
-      {/* <LayoutMain /> */}
-    </div>
-  )
-}
+const baseName = process.env.PUBLIC_URL || '';
+const Router = () => (
+  <BrowserRouter basename={baseName}>
+    <Routes>
+      {routes(routers)}
+    </Routes>
+  </BrowserRouter>
+);
 
 export default Router;

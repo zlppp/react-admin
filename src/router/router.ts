@@ -10,24 +10,62 @@ const Home = lazy(() => import(/* webpackChunkName: 'Home' */ '../page/Home'));
 const TicTacToe = lazy(() => import(/* webpackChunkName: 'TicTacToe' */ '../page/TicTacToe'));
 
 const routers = [
-  {
-    path: '/about',
-    name: 'about',
-    component: About,
-    title: '关于'
-  },
+  // {
+  //   path: '',
+  //   component: Layout,
+  //   children: [
+  //     {
+  //       path: '/home',
+  //       component: Home,
+  //       name: '主页',
+  //     },
+  //     {
+  //       path: '/',
+  //       component: Layout,
+  //       name: '表格',
+  //       children: [
+  //         {
+  //           path: '/about',
+  //           name: 'about',
+  //           menuIds: ['materialTesting', 'materialTestingHot'],
+  //           component: About,
+  //           title: '',
+  //         },
+  //         {
+  //           path: '/TicTacToe',
+  //           name: 'TicTacToe',
+  //           component: TicTacToe,
+  //           title: '井字棋'
+  //         }
+  //       ]
+  //     },
+  //   ]
+  // },
   {
     path: '/home',
-    name: 'Home',
     component: Home,
-    title: '主页'
+    name: '主页',
   },
   {
-    path: '/TicTacToe',
-    name: 'TicTacToe',
-    component: TicTacToe,
-    title: '井字棋'
-  }
+    path: '/',
+    component: Layout,
+    name: '表格',
+    children: [
+      {
+        path: '/about',
+        name: 'about',
+        menuIds: ['materialTesting', 'materialTestingHot'],
+        component: About,
+        title: '',
+      },
+      {
+        path: '/TicTacToe',
+        name: 'TicTacToe',
+        component: TicTacToe,
+        title: '井字棋'
+      }
+    ]
+  },
 ]
 
 export default routers;
