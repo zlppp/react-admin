@@ -91,7 +91,7 @@ const LayoutContainer = () => {
           mode="inline"
           selectedKeys={[currentMenu.name]}
           style={{ height: "100vh" }}
-          defaultOpenKeys={openKeys}
+          openKeys={openKeys}
           inlineIndent={16}
           inlineCollapsed={false}
           theme="dark"

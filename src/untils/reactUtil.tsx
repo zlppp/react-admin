@@ -28,7 +28,6 @@ export const routes = (routeConfig: RouteType[], parentPath = '') => {
             <div className="x-loading-center"><Spin delay={10000} /></div>
           }
         >
-          {/* { || <Layout />} */}
           <route.component />
         </Suspense>
       )}
